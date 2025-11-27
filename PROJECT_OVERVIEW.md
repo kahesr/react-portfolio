@@ -165,7 +165,7 @@ portfolio/
 ```bash
 # Clone and install
 git clone <your-repo>
-cd portfolio
+cd react-portfolio
 npm install
 
 # Development

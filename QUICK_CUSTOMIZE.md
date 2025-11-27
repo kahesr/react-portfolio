@@ -45,8 +45,8 @@ primary-500: '#EA580C',
 charcoal-800: '#475569',
 charcoal-900: '#1E293B',
 ```
-
-## 📝 Update Your Profile
+## Customize Portfolio Content
+### 📝 Update Your Profile
 
 Use Supabase SQL Editor to update your information:
 
@@ -60,9 +60,10 @@ UPDATE profiles SET
   location = 'City, Country',
   image_url = 'https://link-to-your-image.jpg',
   resume_url = 'https://link-to-your-resume.pdf';
+WHERE id IS NOT NULL;
 ```
 
-## 💼 Add Your Work Experience
+### 💼 Add Your Work Experience
 
 ```sql
 INSERT INTO experiences (company, position, start_date, end_date, description, is_current, "order")
@@ -79,32 +80,28 @@ VALUES (
 
 Set `is_current` to `false` for past jobs and remove `end_date` (set to NULL) if you're currently working there.
 
-## 🎓 Add Your Education
+### 🎓 Add Your Education
 
 ```sql
 INSERT INTO education (institution, degree, field, start_date, end_date, description, "order")
 VALUES (
   'University or School Name',
-  'Bachelor of Science',
-  'Computer Science',
+  'Degree',
+  'Field',
   '2020-09-01',
   '2024-05-31',
-  'Any additional notes or honors',
+  'Additional info',
   1
 );
 ```
 
-## 🛠️ Add Your Skills
+### 🛠️ Add Your Skills
 
 Add individual skills with proficiency levels:
 
 ```sql
 INSERT INTO skills (name, category, proficiency, "order")
-VALUES
-  ('React', 'Frontend', 'expert', 1),
-  ('TypeScript', 'Frontend', 'advanced', 2),
-  ('Node.js', 'Backend', 'advanced', 1),
-  ('PostgreSQL', 'Backend', 'intermediate', 2);
+VALUES ('Skill Name', 'Category', 'expert', 1);
 ```
 
 Proficiency levels:
@@ -113,14 +110,16 @@ Proficiency levels:
 - `intermediate` - Comfortable using
 - `beginner` - Learning
 
-## 🎨 Add Portfolio Projects
+Categories: `Frontend`, `Backend`, `Design`, `Tools`, etc.
+
+### 🎨 Add Portfolio Projects
 
 ```sql
 INSERT INTO projects (title, description, short_description, image_url, category, tags, project_url, github_url, "order")
 VALUES (
-  'Project Name',
+  'Project Title',
   'Detailed description of what the project does, technologies used, and your role',
-  'One sentence summary',
+  'Short description: One sentence summary',
   'https://image-url.jpg',
   'work',
   ARRAY['React', 'TypeScript', 'Tailwind CSS'],
@@ -222,12 +221,13 @@ These are added in meta tags - contact your deployment platform for details.
 6. **Contact Info**: Keep your email and phone updated
 7. **Resume Link**: Keep resume up-to-date and easily downloadable
 
-## 🆘 Common Issues
+## 🆘 Common Issues and Troubleshooting
 
 **Email not sending?**
-- Check Resend API key is in Supabase secrets
-- Verify recipient email address
+- Check if RESEND_API_KEY is configured in Supabase secrets
+- Verify recipient email address is correct
 - Check browser console for errors
+- Test using `curl` or Postman to the Edge Function directly
 
 **Skills not showing?**
 - Verify data was inserted correctly
@@ -243,6 +243,82 @@ These are added in meta tags - contact your deployment platform for details.
 - Check browser console for errors
 - Clear localStorage: `localStorage.clear()`
 - Hard refresh: Ctrl+Shift+R
+
+**Database Errors**
+- Ensure Supabase is running and accessible
+- Check network connectivity
+- Verify environment variables are correct
+- Check Supabase dashboard for any alerts
+
+**Styling Issues**
+- Run `npm install` to ensure all dependencies are installed
+- Clear browser cache
+- Rebuild with `npm run build`
+
+**Build Errors**
+- Delete `node_modules` and `package-lock.json`
+- Run `npm install` again
+- Try `npm run build` again
+
+## Database Schema
+
+### profiles
+- `id` (uuid): Primary key
+- `name` (text): Your name
+- `title` (text): Professional title
+- `bio` (text): Biography
+- `email` (text): Contact email
+- `phone` (text): Phone number
+- `location` (text): Location
+- `image_url` (text): Profile image URL
+- `resume_url` (text): Resume PDF URL
+
+### skills
+- `id` (uuid): Primary key
+- `name` (text): Skill name
+- `category` (text): Skill category
+- `proficiency` (text): Level (beginner/intermediate/advanced/expert)
+- `order` (integer): Display order
+
+### experiences
+- `id` (uuid): Primary key
+- `company` (text): Company name
+- `position` (text): Job position
+- `start_date` (date): Start date
+- `end_date` (date): End date (nullable)
+- `description` (text): Job description
+- `is_current` (boolean): Currently working?
+- `order` (integer): Display order
+
+### education
+- `id` (uuid): Primary key
+- `institution` (text): School/University name
+- `degree` (text): Degree name
+- `field` (text): Field of study
+- `start_date` (date): Start date
+- `end_date` (date): End date (nullable)
+- `description` (text): Additional info
+- `order` (integer): Display order
+
+### projects
+- `id` (uuid): Primary key
+- `title` (text): Project title
+- `description` (text): Full description
+- `short_description` (text): Brief description
+- `image_url` (text): Project image URL
+- `category` (text): Type (work/personal/research)
+- `tags` (text[]): Technology tags
+- `project_url` (text): Project URL (nullable)
+- `github_url` (text): GitHub URL (nullable)
+- `order` (integer): Display order
+
+## Support & Resources
+
+- [React Documentation](https://react.dev)
+- [Supabase Documentation](https://supabase.com/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs)
+- [Framer Motion Documentation](https://www.framer.com/motion)
 
 ---
 

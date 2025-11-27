@@ -12,6 +12,7 @@ dist-ssr
 *.local
 
 .bolt
+LAUNCH_CHECKLIST.md
 
 .vscode/*
 !.vscode/extensions.json
