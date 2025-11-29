@@ -49,7 +49,7 @@ npm run lint
 
 Start with one of these guides:
 
-1. **[QUICK_CUSTOMIZE.md](./QUICK_CUSTOMIZE.md)** - Quick SQL commands to customize
+1. **[SETUP_GUIDE.md](./SETUP_GUIDE.md)** - Setup instructions and Customization SQL
 2. **[PORTFOLIO_FEATURES.md](./PORTFOLIO_FEATURES.md)** - Full feature list
 3. **[PROJECT_OVERVIEW.md](./PROJECT_OVERVIEW.md)** - Project overview
 
@@ -105,8 +105,8 @@ src/
 Add and configure Supabase credentials in `.env`:
 
 ```
-VITE_SUPABASE_URL=your_supabase_url
-VITE_SUPABASE_ANON_KEY=your_supabase_key
+VITE_SUPABASE_URL=your_supabase_url             # e.g., https://xyzcompany.supabase.co
+VITE_SUPABASE_ANON_KEY=your_supabase_key        # e.g., eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9... 
 ```
 
 ### Email System
@@ -114,19 +114,6 @@ VITE_SUPABASE_ANON_KEY=your_supabase_key
 - No database storage of emails (privacy-focused)
 - HTML email templates with proper formatting
 - Error handling and validation
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers
-
-## Performance
-
-- **Bundle Size**: 521.95 KB JS (159.71 KB gzipped)
-- **CSS**: 24.26 KB (4.72 KB gzipped)
 
 ## License
 

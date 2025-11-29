@@ -1,4 +1,13 @@
-# Quick Customization Guide
+# Setup and Customization Guide
+
+## Environment Setup
+Add and configure Supabase credentials in `.env`:
+
+```
+// This is dummy data for testing:
+VITE_SUPABASE_URL=https://mebhfcznbfasdaqdegnq.supabase.co
+VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1lYmhmY3puYmZhc2RhcWRlZ25xIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI3OTA4MDYsImV4cCI6MjA3ODM2NjgwNn0.6wh_3WnqiFLr_jKfDkh4ARw-X54RgONIkvT8FuOpCeI
+```
 
 ## 🎨 Changing Colors (Advanced Users Only)
 
@@ -311,15 +320,6 @@ These are added in meta tags - contact your deployment platform for details.
 - `project_url` (text): Project URL (nullable)
 - `github_url` (text): GitHub URL (nullable)
 - `order` (integer): Display order
-
-## Support & Resources
-
-- [React Documentation](https://react.dev)
-- [Supabase Documentation](https://supabase.com/docs)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [TypeScript Documentation](https://www.typescriptlang.org/docs)
-- [Framer Motion Documentation](https://www.framer.com/motion)
-
 ---
 
 For more detailed information, see `SETUP_GUIDE.md` and `PORTFOLIO_FEATURES.md`

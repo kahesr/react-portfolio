@@ -4,8 +4,6 @@
 
 A modern, production-ready portfolio website built with React, TypeScript, and Supabase. Features a stunning Charcoal & Teal design with full dark/light mode support, responsive layout, and integrated email notifications.
 
-**Status**: ✅ Complete and Ready to Deploy
-
 ---
 
 ## 📊 At a Glance
@@ -151,8 +149,7 @@ portfolio/
 ├── package.json             ✓ Dependencies
 ├── .env                     ✓ Environment vars
 └── Documentation/
-    ├── SETUP_GUIDE.md       ✓ Setup instructions
-    ├── QUICK_CUSTOMIZE.md   ✓ Customization SQL
+    ├── SETUP_GUIDE.md       ✓ Setup instructions and Customization SQL
     ├── PORTFOLIO_FEATURES.md✓ Feature list
     ├── LAUNCH_CHECKLIST.md  ✓ Launch checklist
     └── PROJECT_OVERVIEW.md  ✓ This file
@@ -359,8 +356,7 @@ Live at yourdomain.com
 
 | Document | Purpose | When to Use |
 |----------|---------|-----------|
-| **SETUP_GUIDE.md** | Complete setup & config | Initial setup |
-| **QUICK_CUSTOMIZE.md** | SQL commands | Update content |
+| **SETUP_GUIDE.md** | Setup instructions and Customization SQL | Initial setup and content updates |
 | **PORTFOLIO_FEATURES.md** | Feature details | Reference |
 | **LAUNCH_CHECKLIST.md** | Pre-launch tasks | Before going live |
 | **PROJECT_OVERVIEW.md** | This file | Quick reference |
