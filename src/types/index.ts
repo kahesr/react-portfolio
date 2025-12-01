@@ -73,6 +73,8 @@ export interface Theme {
 }
 
 export interface Language {
-  code: string;
+  code: string; 
   name: string;
 }
+
+export type workCategory = 'all' | 'work' | 'personal' | 'research';

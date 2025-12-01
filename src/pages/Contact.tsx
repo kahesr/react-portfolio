@@ -9,7 +9,6 @@ import { Textarea } from '../components/Textarea';
 import { Button } from '../components/Button';
 import { useToast } from '../context/ToastContext';
 import { submitContactForm } from '../lib/api';
-import { Mail, Phone, MapPin } from 'lucide-react';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),

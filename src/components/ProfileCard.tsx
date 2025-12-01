@@ -4,6 +4,7 @@ import { Card } from './Card';
 import { Button } from './Button';
 import { Profile } from '../types';
 import { getProfile } from '../lib/api';
+import { SocialLinks } from './SocialLinks';
 
 export function ProfileCard() {
   const [profile, setProfile] = useState<Profile | null>(null);
@@ -65,6 +66,11 @@ export function ProfileCard() {
           <h1 className="text-2xl font-bold text-charcoal-900 dark:text-white">{profile.name}</h1>
           <p className="text-primary-600 dark:text-primary-400 font-medium mt-1">{profile.title}</p>
           <p className="text-charcoal-600 dark:text-charcoal-400 text-sm mt-3 leading-relaxed">{profile.bio}</p>
+        </div>
+        
+        {/* Social Links */}
+        <div className="flex items-center justify-center gap-5">
+          <SocialLinks />
         </div>
 
         {/* Contact Info */}

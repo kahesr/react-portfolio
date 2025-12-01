@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '../components/Card';
-import { Badge } from '../components/Badge';
 import { Skill } from '../types';
 import { getSkills } from '../lib/api';
 
@@ -70,17 +69,14 @@ export function About() {
                   {categorySkills.map((skill) => (
                     <div
                       key={skill.id}
-                      className="flex items-center gap-2"
-                      title={skill.proficiency}
-                    >
-                      <Badge variant="default">{skill.name}</Badge>
-                      <span
-                        className={`text-xs px-2 py-1 rounded-full font-medium ${
+                      className={`inline-flex rounded-lg items-center gap-2 font-medium text-xs py-1 px-2.5 ${
                           proficiencyColors[skill.proficiency]
                         }`}
-                      >
-                        {skill.proficiency}
-                      </span>
+                      title={skill.proficiency}
+                    >
+                      <span>{skill.name}</span>
+                      <span>|</span>
+                      <span>{skill.proficiency}</span>
                     </div>
                   ))}
                 </div>

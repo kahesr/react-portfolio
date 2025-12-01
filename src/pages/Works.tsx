@@ -3,13 +3,13 @@ import { motion } from 'framer-motion';
 import { Card } from '../components/Card';
 import { Badge } from '../components/Badge';
 import { Modal } from '../components/Modal';
-import { Project } from '../types';
+import { Project, workCategory } from '../types';
 import { getProjects } from '../lib/api';
 import { ExternalLink, Github } from 'lucide-react';
 
 export function Works() {
   const [projects, setProjects] = useState<Project[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<'all' | 'work' | 'personal' | 'research'>('all');
+  const [selectedCategory, setSelectedCategory] = useState<workCategory>('all');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -57,7 +57,7 @@ export function Works() {
         {categories.map((category) => (
           <motion.button
             key={category.value}
-            onClick={() => setSelectedCategory(category.value as any)}
+            onClick={() => setSelectedCategory(category.value as workCategory)}
             className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
               selectedCategory === category.value
                 ? 'bg-primary-500 text-white'
@@ -181,7 +181,7 @@ export function Works() {
               <img
                 src={selectedProject.image_url}
                 alt={selectedProject.title}
-                className="w-full h-64 object-cover rounded-lg"
+                className="w-full h-64 object-contain rounded-lg"
               />
             )}
 
@@ -195,7 +195,7 @@ export function Works() {
                 <h3 className="text-sm font-semibold text-charcoal-600 dark:text-charcoal-400 mb-2">Technologies</h3>
                 <div className="flex gap-2 flex-wrap">
                   {selectedProject.tags.map((tag) => (
-                    <Badge key={tag} variant="default">
+                    <Badge key={tag}>
                       {tag}
                     </Badge>
                   ))}
